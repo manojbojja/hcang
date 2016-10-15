@@ -97,6 +97,12 @@
                 position: static;
             }
         }
+        .rz-ceil{
+            display: none !important;
+        }
+        .rz-floor{
+            display: none !important;
+        }
         .label{
             padding-top:5px;
             padding-bottom:5px;
@@ -111,7 +117,7 @@
             float:right;
         }
         .prince-input-right-input{
-            width: 50px;
+            width: 55px;
         }
         textarea{
             cursor:pointer !important;
