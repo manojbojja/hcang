@@ -1,0 +1,118 @@
+ .form-search{
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+        .desc .desc__features .row {
+            margin-bottom: 20px !important;
+        }
+        .search-query{
+            border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            -moz-border-radius: 2px !important;
+        }
+        .form-search .btn {
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .dashed{
+            border-top: 1px dashed #AAB2BD !important;
+        }
+        .right{
+            float:right;
+        }
+        .inline{
+            display: inline;
+        }
+        .lng-logo{
+            width: 30px;
+            margin-top: -3px;
+        }
+        .right-sidebar{
+            height: 700px;
+            background-color:#e5e7e8;
+            padding-right: 80px !important;
+            box-shadow: 1px 0px 0px #888888;
+        }
+        .image-rounded{
+            min-height: 298.828px;
+        }
+        #learn-more{
+            background-color:#f3f3f3;
+        }
+        .container{
+            width:100%;
+        }
+        .desc__features{
+            margin-top:0px !important;
+        }
+        .navbar-collapse{
+            box-shadow: 0px 1px 0px #888888;
+            margin-left: -23px;
+            margin-right: -28px;
+        }
+        .hidden{
+            display: none;
+        }
+        .filter-by{
+            padding:25px;
+        }
+        .toggle .handle{
+            width: 50px;
+            height: 26px;
+            cursor: pointer;
+        }
+        .toggle .handle:after, .toggle .handle:before{
+            width: 29px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .handle{
+            margin-top: -3px;
+        }
+        .filter{
+            margin-bottom:5px;
+        }
+        .section-pagination{
+            margin-left:0px;
+        }
+        .thmb-title{
+            font-size: 13px;
+            margin-bottom: 5px !important;
+        }
+        .color-div:{
+            width:20px !important;
+            height:20px;
+        }
+        @media (min-width: 768px) {
+            .affix {
+                position: fixed;
+            }
+        }
+        @media (max-width: 767px) {
+            .affix {
+                position: static;
+            }
+        }
+        .label{
+            padding-top:5px;
+            padding-bottom:5px;
+        }
+        .rating-div{
+            margin-top:5px;
+        }
+        .price-input{
+            width: 50px;
+        }
+        .price-input-right {
+            float:right;
+        }
+        .prince-input-right-input{
+            width: 50px;
+        }
+        textarea{
+            cursor:pointer !important;
+        }
