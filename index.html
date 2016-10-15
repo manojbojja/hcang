@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootflat</title>
+    <link rel="shortcut icon" href="favicon_16.ico"/>
+    <!-- site css -->
+    <link rel="stylesheet" href="css/site.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    
+    
+
+    <script type="text/javascript" src="js/angular/app.js"></script>
+    <style>
+        .form-search{
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+        }
+        .desc .desc__features .row {
+            margin-bottom: 20px !important;
+        }
+        .search-query{
+            border-radius: 2px !important;
+            -webkit-border-radius: 2px !important;
+            -moz-border-radius: 2px !important;
+        }
+        .form-search .btn {
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .dashed{
+            border-top: 1px dashed #AAB2BD !important;
+        }
+        .right{
+            float:right;
+        }
+        .inline{
+            display: inline;
+        }
+        .lng-logo{
+            width: 30px;
+            margin-top: -3px;
+        }
+        .right-sidebar{
+            height: 700px;
+            background-color:#e5e7e8;
+            padding-right: 80px !important;
+        }
+        .image-rounded{
+            min-height: 298.828px;
+        }
+        #learn-more{
+            background-color:#f3f3f3;
+        }
+        .container{
+            width:100%;
+        }
+        .desc__features{
+            margin-top:0px !important;
+        }
+
+        .hidden{
+            display: none;
+        }
+        .filter-by{
+            padding:25px;
+        }
+        .toggle .handle{
+            width: 50px;
+            height: 26px;
+            cursor: pointer;
+        }
+        .toggle .handle:after, .toggle .handle:before{
+            width: 29px;
+            height: 24px;
+            cursor: pointer;
+        }
+        .handle{
+            margin-top: -3px;
+        }
+        .filter{
+            margin-bottom:5px;
+        }
+        .section-pagination{
+            margin-left:0px;
+        }
+        .thmb-title{
+            font-size: 13px;
+            margin-bottom: 5px !important;
+        }
+        .color-div:{
+            width:20px !important;
+            height:20px;
+        }
+        @media (min-width: 768px) {
+            .affix {
+                position: fixed;
+            }
+        }
+        @media (max-width: 767px) {
+            .affix {
+                position: static;
+            }
+        }
+        .label{
+            padding-top:5px;
+            padding-bottom:5px;
+        }
+        .rating-div{
+            margin-top:5px;
+        }
+    </style>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+  <body class="home">
+    <div class="docs-header header--noBackground">
+      <!--nav-->
+      <nav class="navbar navbar-default navbar-custom" role="navigation" style="background-color:#ECF0F1">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" height="40"></a>
+          </div>
+          <div class="collapse navbar-collapse">
+          </div>
+        </div>
+      </nav>
+      <!--index-->
+      
+      <!--desc-->
+      
+      <div id="learn-more" class="desc container" ng-controller="codeSubmissions">
+        <div class="desc__features">
+          <div class="row">
+            
+
+
+             <div class="col-md-3 ">
+                 <div class="row filter-by affix right-sidebar" >
+                     
+                     <span class="lead ">Sort By:</span>
+                     <hr class="dashed"/>
+                     <input ng-model="orderByModel" value="price" type="radio" name="search-type"> Price 
+                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     <input ng-model="orderByModel" value="category" type="radio" name="search-type"> Category 
+                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     <br/><br/><br/><br/>
+                     <span class="lead ">Price Range:</span>
+                     <hr class="dashed"/>
+                     
+                 </div>
+                 
+                 <!--<div class="row filter-by">
+                     <span class="lead">Statical Analysis:</span>
+                     <hr class="dashed"/>
+                 </div>-->
+             </div>
+
+
+             <div class="col-md-9 left-sidebar">
+                <br/>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-group form-search">
+                            <input id="searchQuery" type="text" class="form-control search-query" placeholder="Search (by name or category)" ng-model="query">
+                            <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary"  data-type="last">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="dashed"/>
+
+                <div class="row code-panel">
+                    <div class="col-md-12 height-check">
+                            
+                            <div class="col-sm-6 col-md-3" ng-repeat="item in submissions | filter: customFilter | orderBy:orderByModel " ng-init="parseId(item)">
+                                <div class="thumbnail">
+                                    <img class="img-rounded" ng-src="{{item.image}}">
+                                    <div class="caption text-center">
+                                        <div style="text-align:left">
+                                            {{item.name}} 
+                                            <br/>
+                                            <div class="rating-div">
+                                                <span class="label label-success">{{item.rating}} ★</span>
+                                                <div style="text-align:right;margin-top: -20px;">
+                                                    <span class="label label-primary"><i class="fa fa-tag" aria-hidden="true"></i>{{ item.category == 0 ? 'Apparel':'Accessories'}}</span>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <b>₹{{item.price}} &nbsp</b>
+                                            <br/>
+                                            <span class="lead thmb-title">Availability({{item.quantity == 0 ? 'Sold Out':item.quantity }}):</span><br/>
+                                            <div class="color-div" style="background-color: {{item.color}} ; width:20px;" >&nbsp</div>
+                                        </div>
+                                        </br>
+                                    <textarea class="form-control" rows="4">{{item.description}}</textarea>
+                                    <br/>
+                                        
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                </div>
+
+            </div>
+
+
+          </div>
+        </div>
+        
+      </div>
+  </body>
+</html>
